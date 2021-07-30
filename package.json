@@ -9,6 +9,10 @@
     "react-hook",
     "react"
   ],
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/rsmelo92/use-deprecation.git"
@@ -20,6 +24,7 @@
   "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
+    "prepublish": "yarn build",
     "build": "tsc",
     "test": "jest"
   },
