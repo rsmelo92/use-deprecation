@@ -3,6 +3,19 @@
   "version": "1.0.0",
   "author": "Rafael Melo",
   "description": "Deprecation hook for react",
+  "keywords": [
+    "deprecation",
+    "deprecate",
+    "react-hook",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rsmelo92/use-deprecation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rsmelo92/use-deprecation/issues"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
