@@ -24,7 +24,7 @@
   "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "prepare": "yarn build",
+    "prepublishOnly": "yarn build",
     "clean": "rm -rf ./dist",
     "build": "yarn clean && tsc",
     "test": "jest"
