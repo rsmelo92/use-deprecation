@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { useDeprecate } from '..';
+import { useDeprecation } from '..';
 
 interface MockComponent {
   color: string;
@@ -15,7 +15,7 @@ describe('@jusbrasil-rc/utils-deprecate', () => {
   describe('component', () => {
     it('should deprecate component correctly', () => {
       const MockComponent = () => {
-        const { deprecatedComponent } = useDeprecate();
+        const { deprecatedComponent } = useDeprecation();
         deprecatedComponent('MockComponent');
         return <div>Mocked</div>;
       };
@@ -29,7 +29,7 @@ describe('@jusbrasil-rc/utils-deprecate', () => {
 
     it('should deprecate component correctly with alternative', () => {
       const MockComponent = () => {
-        const { deprecatedComponent } = useDeprecate();
+        const { deprecatedComponent } = useDeprecation();
         deprecatedComponent('MockComponent', 'Navbar');
         return <div>Mocked</div>;
       };
@@ -45,7 +45,7 @@ describe('@jusbrasil-rc/utils-deprecate', () => {
   describe('prop', () => {
     it('should deprecate all prop values correctly', () => {
       const MockComponent = ({ color }: MockComponent) => {
-        const { deprecatedProps } = useDeprecate();
+        const { deprecatedProps } = useDeprecation();
         deprecatedProps(color);
         return <div>Mocked</div>;
       };
@@ -65,7 +65,7 @@ describe('@jusbrasil-rc/utils-deprecate', () => {
 
     it('should deprecate only one prop value correctly', () => {
       const MockComponent = ({ color }: MockComponent) => {
-        const { deprecatedProps } = useDeprecate();
+        const { deprecatedProps } = useDeprecation();
         deprecatedProps(color, { value: 'green' });
         return <div>Mocked</div>;
       };
@@ -79,7 +79,7 @@ describe('@jusbrasil-rc/utils-deprecate', () => {
 
     it('should deprecate prop correctly with alternative', () => {
       const MockComponent = ({ color }: MockComponent) => {
-        const { deprecatedProps } = useDeprecate();
+        const { deprecatedProps } = useDeprecation();
         deprecatedProps(color, { value: 'green', alternative: 'blue' });
         return <div>Mocked</div>;
       };
@@ -93,7 +93,7 @@ describe('@jusbrasil-rc/utils-deprecate', () => {
 
     it('should not warn when prop is not deprecated', () => {
       const MockComponent = ({ color }: MockComponent) => {
-        const { deprecatedProps } = useDeprecate();
+        const { deprecatedProps } = useDeprecation();
         deprecatedProps(color, { value: 'green' });
         return <div>Mocked</div>;
       };

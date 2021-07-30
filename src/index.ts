@@ -3,7 +3,7 @@ interface Options {
   alternative?: string;
 }
 
-function useDeprecate() {
+function useDeprecation() {
   const deprecatedComponent = (name: string, alternative?: string) => {
     const message = alternative ? `use ${alternative} instead` : "don't use it anymore";
     const componentName = name || 'This component';
@@ -25,4 +25,4 @@ function useDeprecate() {
   return { deprecatedComponent, deprecatedProps };
 }
 
-export { useDeprecate };
+export { useDeprecation };
