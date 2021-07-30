@@ -1,9 +1,23 @@
 {
   "name": "use-deprecation",
   "version": "1.0.0",
-  "main": "index.js",
+  "author": "Rafael Melo",
+  "description": "Deprecation hook for react",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
     "test": "jest"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^12.0.0",
+    "@types/jest": "^26.0.24",
+    "@types/react": "^17.0.15",
+    "jest": "^27.0.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
   }
 }

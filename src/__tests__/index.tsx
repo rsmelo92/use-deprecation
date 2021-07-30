@@ -1,9 +1,11 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-console */
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { useDeprecate } from '../';
+import { useDeprecate } from '..';
+
+interface MockComponent {
+  color: string;
+}
 
 describe('@jusbrasil-rc/utils-deprecate', () => {
   beforeEach(() => {
@@ -42,7 +44,7 @@ describe('@jusbrasil-rc/utils-deprecate', () => {
 
   describe('prop', () => {
     it('should deprecate all prop values correctly', () => {
-      const MockComponent = ({ color }) => {
+      const MockComponent = ({ color }: MockComponent) => {
         const { deprecatedProps } = useDeprecate();
         deprecatedProps(color);
         return <div>Mocked</div>;
@@ -62,7 +64,7 @@ describe('@jusbrasil-rc/utils-deprecate', () => {
     });
 
     it('should deprecate only one prop value correctly', () => {
-      const MockComponent = ({ color }) => {
+      const MockComponent = ({ color }: MockComponent) => {
         const { deprecatedProps } = useDeprecate();
         deprecatedProps(color, { value: 'green' });
         return <div>Mocked</div>;
@@ -76,7 +78,7 @@ describe('@jusbrasil-rc/utils-deprecate', () => {
     });
 
     it('should deprecate prop correctly with alternative', () => {
-      const MockComponent = ({ color }) => {
+      const MockComponent = ({ color }: MockComponent) => {
         const { deprecatedProps } = useDeprecate();
         deprecatedProps(color, { value: 'green', alternative: 'blue' });
         return <div>Mocked</div>;
@@ -90,7 +92,7 @@ describe('@jusbrasil-rc/utils-deprecate', () => {
     });
 
     it('should not warn when prop is not deprecated', () => {
-      const MockComponent = ({ color }) => {
+      const MockComponent = ({ color }: MockComponent) => {
         const { deprecatedProps } = useDeprecate();
         deprecatedProps(color, { value: 'green' });
         return <div>Mocked</div>;
