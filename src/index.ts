@@ -1,4 +1,3 @@
-
 interface Options {
   value?: string;
   alternative?: string;
